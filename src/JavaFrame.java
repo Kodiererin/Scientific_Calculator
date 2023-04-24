@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,9 +19,18 @@ public class JavaFrame extends JFrame {
 	javax.swing.JButton eight;
 	javax.swing.JButton nine;
 	
+	javax.swing.JLabel display;
+	
 	
 	
 	JavaFrame(){
+		super("Scientific Calculator");
+		GridLayout gb = new GridLayout(8, 8);
+		GridBagConstraints gbc = new GridBagConstraints();
+		setLayout(gb);
+		
+		setMinimumSize(new Dimension(400,400));
+		
 		zero = new javax.swing.JButton("0");
 		one = new javax.swing.JButton("1");
 		two = new javax.swing.JButton("2");
@@ -32,15 +42,17 @@ public class JavaFrame extends JFrame {
 		eight = new javax.swing.JButton("8");
 		nine = new javax.swing.JButton("9");
 		
-		setLayout(new BorderLayout(20,15));
+		display = new javax.swing.JLabel("Hello World");
 		
-		add(zero,BorderLayout.WEST);
-		add(one,BorderLayout.CENTER);
-		add(two,BorderLayout.CENTER);
-		add(three,BorderLayout.CENTER);
-		add(four,BorderLayout.CENTER);
-		add(five,BorderLayout.CENTER);
+//		gbc.fill = gbc.HORIZONTAL;
+//		add(zero,gbc);
+//		add(one,gbc);
+//		add(two , gbc);
+//		
+		add(zero);
+		add(one);
 		
+		add(display);
 	}
 	public static void main(String[] args) {
 		JavaFrame frame = new JavaFrame();
